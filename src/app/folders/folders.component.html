@@ -1,0 +1,17 @@
+<h3>Folders <span *ngIf="storage"> for Storage: {{storage.name}}</span></h3>
+
+<table>
+    <tr>
+        <th></th>
+        <th>Storage</th>
+        <th>Title</th>
+        <th>Lfolder/Mpath</th>
+    </tr>
+    <tr *ngFor="let f of folders" #t>
+        <td> {{f.storage_id}}</td>
+        <td> {{findStorage(f.storage_id).name}}</td>
+        <td> {{f.title}} </td>
+        <td><button mat-button [routerLink]="['/folders', f.id]">{{f.lfolder}} / {{f.mpath}} </button> </td>
+
+    </tr>
+</table>

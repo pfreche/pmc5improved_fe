@@ -1,0 +1,15 @@
+
+<i class="material-icons">
+    storage
+    </i>
+<table> 
+    <tr><th>ID</th><th>Storage</th><th>Mtype</th></tr>
+  <tr *ngFor="let storage of storages"  #t>
+    <td > {{storage.id}}</td>
+    <td > 
+    <button mat-button [routerLink]="['/storages', storage.id]"> {{storage.name}}</button> </td>
+    <td > {{storage.mtype}}/{{myMediaType[storage.mtype]}}</td>
+    <td ><button mat-button [routerLink]="['/folders/storage', storage.id]">  <i class="material-icons">folder</i></button> </td> 
+  </tr>
+  </table>
+

@@ -1,0 +1,30 @@
+<h3>Medium </h3>
+
+<div class="container">
+    <div>
+        <table>
+            <tr>
+                <td><b>Title</b></td>
+                <td>{{mfile.title}}</td>
+            </tr>
+            <tr>
+                <td><b>Filename</b></td>
+                <td>{{mfile.filename}}</td>
+            </tr>
+<tr></tr>
+            <tr>
+                <td><b>in Folder</b></td>
+                <td>{{mfile.folder.title}}</td>
+            </tr>
+
+            <tr *ngFor=" let p of mfile.proberties">
+                <td><b>{{p.name}}</b></td>
+                <td>{{p.value}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="thumbnail"> <a target='new' href='{{mediumUrl}}'> <img src='{{thumbnailUrl}}'></a>
+    </div>
+
+</div>

@@ -1,0 +1,16 @@
+<span>Storage</span><p></p>
+<mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput placeholder="Just a placeholder" [(ngModel)]="storage.name" maxlength="20">
+</mat-form-field>
+<mat-form-field>
+    <mat-select  [(ngModel)]="storage.mtype" >
+        <mat-option *ngFor="let mediaType of mediaTypes; let i = index" [value]="i">
+            {{mediaTypes[i]}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+
+<button mat-button color="primary" (click)="save()">Save</button>
+<p></p>
+<button mat-button [routerLink]="['/folders/storage', storage.id]"> Show Folders</button>

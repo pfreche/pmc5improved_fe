@@ -1,0 +1,27 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>PMC5</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#">Bookmarks</a>
+      <a mat-list-item href="#">Suche</a>
+      <a mat-list-item routerLink="storages">Storages</a>
+      <a mat-list-item routerLink="folders">Folders</a>
+      <a mat-list-item routerLink="tt"> Test-Table</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+  <router-outlet></router-outlet>  
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>
